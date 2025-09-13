@@ -1,0 +1,51 @@
+/* Step 1: Import LCARS font */
+@font-face {
+    font-family: 'LCARS';
+    src: url('/fonts/okuda.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Step 2: Apply LCARS styling */
+body {
+    font-family: 'LCARS', sans-serif;
+    background-color: #000; /* Classic LCARS black background */
+    color: #FFA500; /* LCARS-style amber text */
+    margin: 0;
+    padding: 0;
+}
+
+/* LCARS-inspired buttons */
+.lcars-button {
+    display: inline-block;
+    background-color: #E63946; /* Red LCARS button color */
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 15px 15px 0 0; /* Rounded tops */
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Hover effect for buttons */
+.lcars-button:hover {
+    background-color: #F4A261;
+    color: black;
+}
+
+/* Additional LCARS interface elements */
+.lcars-bar {
+    height: 50px;
+    background-color: #0077B6; /* Blue LCARS panel */
+    margin-bottom: 10px;
+    border-radius: 0 0 25px 25px; /* Rounded bottoms */
+}
+
+.lcars-panel {
+    padding: 20px;
+    background-color: #2A9D8F; /* Teal LCARS panel */
+    margin: 10px;
+    border-radius: 10px;
+}

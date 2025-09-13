@@ -1,0 +1,41 @@
+{{ define "main" }}
+<section class="prose">
+  <h1>{{ .Title | default "Galleries" }}</h1>
+  {{ with .Content }}{{ . }}{{ end }}
+
+  {{ $pages := .Pages.ByDate.Reverse }}
+  {{ if gt (len $pages) 0 }}
+    <ul class="gallery-list">
+      {{ range $pages }}
+        {{ $cover := .Resources.GetMatch "featured*" }}
+        {{ if not $cover }}
+          {{ $imgs := where .Resources "MediaType.MainType" "image" }}
+          {{ if gt (len $imgs) 0 }}{{ $cover = index $imgs 0 }}{{ end }}
+        {{ end }}
+
+        {{ $thumb := cond $cover ($cover.Fill "600x375 q75 webp") nil }}
+        {{ $count := len (where (.Resources.Match "**") "MediaType.MainType" "image") }}
+
+        <li class="gallery-item">
+          <a class="gallery-link" href="{{ .RelPermalink }}">
+            {{ if $thumb }}
+              <img class="gallery-thumb" src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}">
+            {{ else }}
+              <div class="gallery-thumb placeholder" aria-hidden="true"></div>
+            {{ end }}
+            <div class="gallery-meta">
+              <h2 class="gallery-title">{{ .Title }}</h2>
+              <div class="gallery-sub">
+                <time datetime="{{ .Date.UTC.Format "2006-01-02" }}">{{ .Date.Format "2 January 2025" }}</time>
+                · {{ $count }} photo{{ if ne $count 1 }}s{{ end }}
+              </div>
+            </div>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>No albums yet.</p>
+  {{ end }}
+</section>
+{{ end }}

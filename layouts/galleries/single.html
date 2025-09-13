@@ -1,0 +1,30 @@
+{{ define "main" }}
+<article class="prose">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+
+  {{/* Collect all page resources, then keep only images (robust) */}}
+  {{ $all := .Resources.Match "**" }}
+  {{ $imgs := where $all "MediaType.MainType" "image" }}
+
+  {{ if gt (len $imgs) 0 }}
+    <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
+      {{ range $imgs }}
+        {{ $thumb := .Fill "600x400 q75 webp" }}
+        {{ $large := .Resize "1600x q80 webp" }}
+        <a class="glightbox" data-gallery="album"
+           href="{{ $large.RelPermalink }}"
+           data-title="{{ .Name }}">
+          <img loading="lazy"
+               src="{{ $thumb.RelPermalink }}"
+               alt="{{ .Name }}"
+               width="{{ $thumb.Width }}"
+               height="{{ $thumb.Height }}">
+        </a>
+      {{ end }}
+    </div>
+  {{ else }}
+    <p>No photos yet.</p>
+  {{ end }}
+</article>
+{{ end }}

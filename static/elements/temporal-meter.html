@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporal Disruption Meter</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            transition: background-color 1s ease;
+        }
+        #title {
+            font-size: 3rem;
+            color: #ffcc00;
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 20px;
+        }
+        #meterContainer {
+            width: 60px;
+            height: 60%;
+            background-color: #333;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px #ff9900;
+            position: relative;
+        }
+        #meterFill {
+            width: 100%;
+            height: 0%;
+            background-color: #00ff00;
+            transition: height 1s ease;
+            position: absolute;
+            bottom: 0;
+        }
+        #meterLabel {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #ffcc00;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+        }
+        button:hover {
+            background-color: #ff9900;
+        }
+    </style>
+</head>
+<body>
+    <div id="title">Temporal Disruption Meter</div>
+    <div id="meterContainer">
+        <div id="meterFill"></div>
+        <div id="meterLabel">0</div>
+    </div>
+    <button id="increaseButton">Increase Disruption</button>
+    <button id="decreaseButton">Decrease Disruption</button>
+    <script>
+        let currentLevel = 0;
+        const meterLevels = 10;
+        const meterFill = document.getElementById("meterFill");
+        const meterLabel = document.getElementById("meterLabel");
+        const increaseButton = document.getElementById("increaseButton");
+        const decreaseButton = document.getElementById("decreaseButton");
+
+        increaseButton.addEventListener("click", function () {
+            if (currentLevel < meterLevels) {
+                currentLevel++;
+                updateMeter();
+            }
+        });
+
+        decreaseButton.addEventListener("click", function () {
+            if (currentLevel > 0) {
+                currentLevel--;
+                updateMeter();
+            }
+        });
+
+        function updateMeter() {
+            playMeterChangeAnimation();
+            playMeterChangeSound();
+            updateBackgroundColor();
+            const heightPercentage = (currentLevel / meterLevels) * 100;
+            meterFill.style.height = `${heightPercentage}%`;
+            meterLabel.textContent = currentLevel;
+
+            if (currentLevel === meterLevels) {
+                meterFill.style.backgroundColor = '#ff0000';
+            } else {
+                meterFill.style.backgroundColor = '#00ff00';
+            }
+        }
+
+        function playMeterChangeAnimation() {
+            meterFill.style.transform = 'scale(1.05)';
+            setTimeout(() => meterFill.style.transform = 'scale(1)', 500);
+        }
+
+        function playMeterChangeSound() {
+            const audio = new Audio('meter_change.mp3'); // Ensure you have a file named 'meter_change.mp3'
+            audio.addEventListener('canplaythrough', () => {
+                audio.play().catch(error => console.error('Error playing audio:', error));
+            });
+            audio.addEventListener('error', () => {
+                console.error('Error loading audio file: meter_change.mp3');
+            });
+        }
+
+        function updateBackgroundColor() {
+            const colors = [
+                '#000', '#220000', '#440000', '#660000', '#880000', '#aa0000', '#cc0000', '#ee0000', '#ff0000'
+            ];
+            document.body.style.backgroundColor = colors[Math.min(currentLevel, colors.length - 1)];
+        }
+    </script>
+</body>
+</html>
