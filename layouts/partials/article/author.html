@@ -1,0 +1,32 @@
+{{/* Only show author if the PAGE has .Params.author; no site fallback */}}
+{{ $pageAuthor := .Params.author }}
+{{ $show := and $pageAuthor (.Params.showAuthor | default (.Site.Params.article.showAuthor | default true)) }}
+{{ if not $show }}{{ return }}{{ end }}
+
+{{/* Normalize page author into a dict */}}
+{{ $norm := dict }}
+{{ if eq (printf "%T" $pageAuthor) "string" }}
+  {{ $norm = dict "name" (printf "%v" $pageAuthor) }}
+{{ else }}
+  {{ $norm = $pageAuthor }}
+{{ end }}
+
+{{ $name := or ($norm.name) "Author" }}
+{{ $headline := $norm.headline }}
+{{ $bio := $norm.bio }}
+{{ $imgPath := $norm.image }}
+
+<footer class="article-author">
+  <div class="flex items-center gap-4">
+    {{ with $imgPath }}
+      {{ with (resources.Get .) }}
+        <img class="rounded-full" src="{{ (.Fit "96x96").RelPermalink }}" width="48" height="48" alt="{{ $name }}">
+      {{ end }}
+    {{ end }}
+    <div>
+      <div class="font-semibold">{{ $name }}</div>
+      {{ with $headline }}<div class="text-sm opacity-80">{{ . | markdownify }}</div>{{ end }}
+      {{ with $bio }}<div class="text-sm mt-1">{{ . | markdownify }}</div>{{ end }}
+    </div>
+  </div>
+</footer>

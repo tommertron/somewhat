@@ -1,16 +1,15 @@
-/* Brand color */
+/* ===== Brand & Typography ===== */
 :root { --brand-blue: #1C4476; } /* rgb(28,68,118) */
 
-/* —— Headings everywhere, including Tailwind Typography —— */
 h1, h2, h3, h4, h5, h6,
 .prose :where(h1, h2, h3, h4, h5, h6) {
   color: var(--brand-blue) !important;
+  font-family: 'Nanum Myeongjo', serif !important;
 }
 
-/* Typography plugin (used inside .prose) reads these custom props */
+/* Tailwind Typography plugin colors */
 .prose {
   --tw-prose-headings: var(--brand-blue);
-  /* optional: if you also want intro lead / strong to pick up the hue */
   --tw-prose-bold: var(--brand-blue);
 }
 html.dark .prose {
@@ -18,7 +17,7 @@ html.dark .prose {
   --tw-prose-bold: var(--brand-blue);
 }
 
-/* —— Menu links (catch-all for common Congo header layouts) —— */
+/* Header/menu link color + font (light & dark) */
 header nav a,
 .site-header a,
 .main-nav a,
@@ -27,56 +26,32 @@ header nav a,
 header .menu a,
 header .main-menu a {
   color: var(--brand-blue) !important;
+  font-family: 'Nanum Myeongjo', serif !important;
 }
-header nav a:hover,
-.site-header a:hover,
-.main-nav a:hover,
-.menu a:hover,
-.nav a:hover,
-header .menu a:hover,
-header .main-menu a:hover {
-  color: var(--brand-blue) !important;
-}
-
-/* Dark mode too */
 html.dark header nav a,
 html.dark .site-header a,
 html.dark .main-nav a,
 html.dark .menu a,
-html.dark .nav a {
-  color: var(--brand-blue) !important;
-}
+html.dark .nav a { color: var(--brand-blue) !important; }
 
-/* Headings + menu font */
-h1, h2, h3, h4, h5, h6,
-.prose :where(h1, h2, h3, h4, h5, h6),
-header nav a,
-.site-header a,
-.main-nav a,
-.menu a,
-.nav a,
-header .menu a,
-header .main-menu a {
-  font-family: 'Nanum Myeongjo', serif !important;
-}
-
-/* Grid tidy */
+/* ===== Gallery: single album grid ===== */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
   gap: 12px;
 }
 
-/* Remove link styling from image tiles */
-.gallery-grid a { 
+/* Remove link/hover “blue wash” on tiles */
+.gallery-grid a {
   text-decoration: none !important;
   background: transparent !important;
   box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
 }
 .gallery-grid a:hover,
 .gallery-grid a:focus {
-  text-decoration: none !important;
   background: transparent !important;
+  text-decoration: none !important;
   outline: none !important;
 }
 .gallery-grid a img {
@@ -86,16 +61,9 @@ header .main-menu a {
   filter: none;
   transition: transform .08s ease-in-out;
 }
-.gallery-grid a:hover img {
-  transform: scale(1.01);
-}
+.gallery-grid a:hover img { transform: scale(1.01); }
 
-/* iOS tap highlight */
-.gallery-grid a, .gallery-grid img {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Galleries list layout (match Congo “Updates” vibe) */
+/* ===== Gallery: list (section page) ===== */
 .gallery-list {
   list-style: none;
   margin: 0;
@@ -103,64 +71,42 @@ header .main-menu a {
   display: grid;
   gap: 28px;
 }
-
-.gallery-item {
-  margin: 0;
-}
+.gallery-item { margin: 0; }
 
 .gallery-link {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 18px;
-  align-items: start;
+  grid-template-columns: 300px 1fr; /* thumb width */
+  gap: 20px;
+  align-items: center;              /* align image & text */
   text-decoration: none !important;
   background: transparent !important;
+  color: inherit !important;        /* keep text color stable */
 }
+.gallery-link:visited { color: inherit !important; }
+.gallery-link:hover,
+.gallery-link:focus {
+  background: transparent !important;
+  color: inherit !important;
+}
+/* Neutralize any theme hover styles on descendants */
+.gallery-link *, .gallery-link:hover * { text-decoration: none !important; color: inherit !important; }
 
 .gallery-thumb {
   display: block;
-  width: 260px;
-  height: 162px; /* 16:10ish from 600x375 */
+  width: 300px;
+  height: 180px;                    /* keep desired aspect */
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 14px;
   box-shadow: none;
+  margin: 0;
 }
+.gallery-thumb.placeholder { background: #eee; border: 1px solid #ddd; }
 
-.gallery-thumb.placeholder {
-  background: #eee;
-  border: 1px solid #ddd;
+.gallery-meta { margin: 0; }
+.gallery-title { margin: 0 0 4px 0; line-height: 1.15; }
+.gallery-sub { opacity: .85; font-size: .95rem; margin: 0 0 .35rem 0; }
+
+@media (max-width: 720px) {
+  .gallery-link { grid-template-columns: 1fr; align-items: start; }
+  .gallery-thumb { width: 100%; height: 200px; }
 }
-
-.gallery-meta { margin-top: 2px; }
-
-.gallery-title {
-  margin: 0 0 2px 0;
-  font-size: 1.25rem;
-  line-height: 1.2;
-  color: inherit;
-}
-
-.gallery-sub {
-  opacity: .75;
-  font-size: .95rem;
-  margin-bottom: .35rem;
-}
-
-.gallery-summary { margin: .2rem 0 0 0; }
-
-/* kill Congo link hover tint on the whole row */
-.gallery-link:hover { background: transparent !important; }
-
-/* Keep text colors/opacity when hovering the row */
-.gallery-link:hover { background: transparent !important; }
-.gallery-link:hover .gallery-title,
-.gallery-link:hover .gallery-sub {
-  color: inherit !important;
-  opacity: .75; /* same as at rest */
-}
-
-/* If your theme forces stronger hover styles on links, neutralize them */
-.gallery-link, .gallery-link * {
-  text-decoration: none !important;
-}
-

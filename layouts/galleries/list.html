@@ -3,7 +3,7 @@
   <h1>{{ .Title | default "Galleries" }}</h1>
   {{ with .Content }}{{ . }}{{ end }}
 
-  {{ $pages := .Pages.ByDate.Reverse }}
+  {{ $pages := .Pages.ByDate }}
   {{ if gt (len $pages) 0 }}
     <ul class="gallery-list">
       {{ range $pages }}
@@ -26,7 +26,8 @@
             <div class="gallery-meta">
               <h2 class="gallery-title">{{ .Title }}</h2>
               <div class="gallery-sub">
-                <time datetime="{{ .Date.UTC.Format "2006-01-02" }}">{{ .Date.Format "2 January 2025" }}</time>
+                <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{ .Date.Format "2 January 2006" }}</time>
                 · {{ $count }} photo{{ if ne $count 1 }}s{{ end }}
               </div>
             </div>

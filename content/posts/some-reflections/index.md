@@ -76,4 +76,8 @@ So…
 
 **“Who wants to make theatre with me?”**
 
+**Kate Hodgert**, Class of 2002, *Somewhat Founder*
+
 P.S. Thank you all so much for a deeply meaningful and hilarious few days together “walking the halls” of our past lives. Official reunion wrap-up email coming soon.
+
+
