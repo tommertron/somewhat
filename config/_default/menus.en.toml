@@ -26,6 +26,33 @@
   weight = 3
 
 [[main]]
+  name = "Instagram"
+  url = "https://www.instagram.com/somewhatreunion/?igsh=eTBwZmQwNDhsbzk%3D"
+  weight = 4
+  [main.params]
+    icon = "instagram"
+    target = "_blank"
+    showName = false
+
+[[main]]
+  name = "Facebook"
+  url = "https://www.facebook.com/groups/somewhatreunion"
+  weight = 5
+  [main.params]
+    icon = "facebook"
+    target = "_blank"
+    showName = false
+
+[[main]]
+  name = "Discord"
+  url = "https://discord.com/invite/7z7qS2ARez"
+  weight = 6
+  [main.params]
+    icon = "discord"
+    target = "_blank"
+    showName = false
+
+[[main]]
   identifier = "search"
   weight = 99
   [main.params]
