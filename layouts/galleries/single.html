@@ -12,12 +12,13 @@
       {{ range $imgs }}
         {{ $thumb := .Fill "600x400 q75 webp" }}
         {{ $large := .Resize "1600x q80 webp" }}
+        {{ $displayName := replaceRE "\\.[^.]+$" "" .Name }}
         <a class="glightbox" data-gallery="album"
            href="{{ $large.RelPermalink }}"
-           data-title="{{ .Name }}">
+           data-title="{{ $displayName }}">
           <img loading="lazy"
                src="{{ $thumb.RelPermalink }}"
-               alt="{{ .Name }}"
+               alt="{{ $displayName }}"
                width="{{ $thumb.Width }}"
                height="{{ $thumb.Height }}">
         </a>

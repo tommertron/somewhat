@@ -1,7 +1,12 @@
 {{ define "main" }}
 <section class="prose">
-  <h1>{{ .Title | default "Galleries" }}</h1>
+  <h1>Pictures</h1>
   {{ with .Content }}{{ . }}{{ end }}
+
+  <p class="gallery-intro">
+    Got reunion photos to add, a name update, or a pic you'd rather hide? Drop us a line at
+    <a href="mailto:committee@somewhatreunion.org">committee@somewhatreunion.org</a>.
+  </p>
 
   {{ $pages := .Pages.ByDate }}
   {{ if gt (len $pages) 0 }}

@@ -5,6 +5,7 @@ showAuthor: false
 showEdit: false
 showDate: false
 showReadingTime: false
+showPagination: false
 ---
 
 ## The Somewhat Story

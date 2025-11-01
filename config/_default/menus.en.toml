@@ -26,9 +26,14 @@
   weight = 3
 
 [[main]]
+  name = "Resources"
+  pageRef = "resources"
+  weight = 4
+
+[[main]]
   name = "Instagram"
   url = "https://www.instagram.com/somewhatreunion/?igsh=eTBwZmQwNDhsbzk%3D"
-  weight = 4
+  weight = 5
   [main.params]
     icon = "instagram"
     target = "_blank"
@@ -37,7 +42,7 @@
 [[main]]
   name = "Facebook"
   url = "https://www.facebook.com/groups/somewhatreunion"
-  weight = 5
+  weight = 6
   [main.params]
     icon = "facebook"
     target = "_blank"
@@ -46,7 +51,7 @@
 [[main]]
   name = "Discord"
   url = "https://discord.com/invite/7z7qS2ARez"
-  weight = 6
+  weight = 7
   [main.params]
     icon = "discord"
     target = "_blank"

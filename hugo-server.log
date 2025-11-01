@@ -1,0 +1,87 @@
+Watching for changes in /Users/tommertron/coding/hugo/somewhat/somewhat/{archetypes,assets,content,layouts,static,themes}
+Watching for config changes in /Users/tommertron/coding/hugo/somewhat/somewhat/hugo.toml, /Users/tommertron/coding/hugo/somewhat/somewhat/config/_default, /Users/tommertron/coding/hugo/somewhat/somewhat/themes/congo/config/_default
+Start building sites … 
+hugo v0.140.2+extended+withdeploy darwin/arm64 BuildDate=2024-12-30T15:01:53Z VendorInfo=brew
+
+
+                   | EN   
+-------------------+------
+  Pages            |  22  
+  Paginator pages  |   0  
+  Non-page files   |  87  
+  Static files     |  14  
+  Processed images | 192  
+  Aliases          |   3  
+  Cleaned          |   0  
+
+Built in 118 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1) 
+Press Ctrl+C to stop
+adding created directory to watchlist /Users/tommertron/coding/hugo/somewhat/somewhat/assets/css/schemes
+
+Change detected, rebuilding site (#1).
+2025-11-01 16:58:09.552 -0400
+Asset changed /css/schemes/queens.css
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 2 ms
+
+Change of config file detected, rebuilding site (#2).
+2025-11-01 16:58:13.551 -0400
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Rebuilt in 137 ms
+
+Change detected, rebuilding site (#3).
+2025-11-01 16:58:37.049 -0400
+Asset changed /css/custom.css
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 17 ms
+
+Change detected, rebuilding site (#4).
+2025-11-01 17:00:57.046 -0400
+Asset changed /css/custom.css
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 32 ms
+
+Change detected, rebuilding site (#5).
+2025-11-01 17:01:17.046 -0400
+Asset changed /css/custom.css
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 21 ms
+
+Change of config file detected, rebuilding site (#6).
+2025-11-01 17:07:37.536 -0400
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Rebuilt in 142 ms
+
+Change detected, rebuilding site (#7).
+2025-11-01 17:07:43.536 -0400
+Source changed /resources.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 19 ms
+
+Change detected, rebuilding site (#8).
+2025-11-01 17:09:06.534 -0400
+Source changed /resources.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 30 ms
+
+Change detected, rebuilding site (#9).
+2025-11-01 17:10:18.532 -0400
+Source changed /resources.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 12 ms
+
+Change detected, rebuilding site (#10).
+2025-11-01 17:10:25.532 -0400
+Source changed /about/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 9 ms
+
+Change detected, rebuilding site (#11).
+2025-11-01 17:10:36.032 -0400
+Source changed /resources.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 11 ms
