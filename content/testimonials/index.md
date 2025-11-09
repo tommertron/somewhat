@@ -17,7 +17,7 @@ showEdit: false
 
 > The Queen's Drama 20-Year Reunion was an absolute highlight of my year and a powerful testament to the enduring bonds forged during our time in Kingston.
 > This was more than just a trip; it was a deeply meaningful journey back to the foundation of where I grew up, both personally and professionally. Seeing colleagues and friends after two decades immediately reconnected me to the vibrant spirit of Queen's and the unique community the Drama Department fostered.
-> The event successfully reignited my commitment to the university, making me feel more connected to Queen's today than I have in years. For its incredible emotional resonance, its ability to bridge 20 years of history, and its success in re-engaging alumni, this reunion is truly deserving of the Alumni Event of the Year Award."
+> The event successfully reignited my commitment to the university, making me feel more connected to Queen's today than I have in years. For its incredible emotional resonance, its ability to bridge 20 years of history, and its success in re-engaging alumni, this reunion is truly deserving of the Alumni Event of the Year Award.
 
 ## Stephen Sheffer, class of '02
 
