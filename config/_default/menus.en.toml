@@ -1,61 +1,84 @@
 # -- Main Menu --
 # The main menu is displayed in the header at the top of the page.
-# Acceptable parameters are name, pageRef, page, url, title, weight.
-#
-# The simplest menu configuration is to provide:
-#   name = The name to be displayed for this menu link
-#   pageRef = The identifier of the page or section to link to
-#
-# By default the menu is ordered alphabetically. This can be
-# overridden by providing a weight value. The menu will then be
-# ordered by weight from lowest to highest.
+# This menu supports parent-child relationships for dropdown menus.
 
+# About parent menu
 [[main]]
+  identifier = "about-menu"
   name = "About"
   pageRef = "about"
   weight = 1
 
 [[main]]
+  name = "Committee"
+  pageRef = "committee"
+  parent = "about-menu"
+  weight = 2
+
+[[main]]
+  name = "Testimonials"
+  pageRef = "testimonials"
+  parent = "about-menu"
+  weight = 3
+
+# Pictures - standalone top-level item
+[[main]]
   name = "Pictures"
   pageRef = "galleries"
-  weight = 2
+  weight = 10
+
+# Community parent menu
+[[main]]
+  identifier = "community-menu"
+  name = "Community"
+  weight = 11
 
 [[main]]
   name = "Updates"
   pageRef = "posts"
-  weight = 3
-
-[[main]]
-  name = "Resources"
-  pageRef = "resources"
-  weight = 4
+  parent = "community-menu"
+  weight = 1
 
 [[main]]
   name = "Instagram"
   url = "https://www.instagram.com/somewhatreunion/?igsh=eTBwZmQwNDhsbzk%3D"
-  weight = 5
+  parent = "community-menu"
+  weight = 3
   [main.params]
     icon = "instagram"
     target = "_blank"
-    showName = false
+    showName = true
 
 [[main]]
   name = "Facebook"
   url = "https://www.facebook.com/groups/somewhatreunion"
-  weight = 6
+  parent = "community-menu"
+  weight = 4
   [main.params]
     icon = "facebook"
     target = "_blank"
-    showName = false
+    showName = true
 
 [[main]]
   name = "Discord"
   url = "https://discord.com/invite/7z7qS2ARez"
-  weight = 7
+  parent = "community-menu"
+  weight = 5
   [main.params]
     icon = "discord"
     target = "_blank"
-    showName = false
+    showName = true
+
+# Top-level items
+[[main]]
+  name = "Resources"
+  pageRef = "resources"
+  weight = 20
+
+[[main]]
+  name = "Contact"
+  pageRef = "contact"
+  weight = 21
 
 [[main]]
   identifier = "search"
