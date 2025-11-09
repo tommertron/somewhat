@@ -1,3 +1,24 @@
 <!-- Nanum Myeongjo (close to AppleMyungjo) -->
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+<style>
+  /* Force GLightbox navigation arrows to show on mobile */
+  .gslide-description {
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  /* Make arrows always visible, even on mobile */
+  .glightbox-container .gslide-description .gslide-title,
+  .glightbox-container .gslide-description .gslide-desc {
+    color: #fff;
+  }
+
+  /* Ensure navigation buttons are always visible */
+  @media (max-width: 768px) {
+    .glightbox-container .gbtn.gnext,
+    .glightbox-container .gbtn.gprev {
+      display: flex !important;
+      opacity: 1 !important;
+    }
+  }
+</style>
