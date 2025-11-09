@@ -29,8 +29,8 @@
                 {{ if and (eq .Params.action "locale") (or (not page.IsTranslated) (not hugo.IsMultilingual)) }}
                   {{ continue }}
                 {{ end }}
-                {{/* Skip parent-only items without URLs in mobile */}}
-                {{ if not .HasChildren }}
+                {{/* Only render top-level items (no parent) */}}
+                {{ if not .Parent }}
                 <li class="group mb-1">
                   {{ if eq .Params.action "search" }}
                     {{ $.Scratch.Add "searchCount" 1 }}
@@ -53,7 +53,58 @@
                         {{ end }}
                       </button>
                     {{ end }}
+                  {{ else if .HasChildren }}
+                    {{/* Parent with children - show parent if it has URL, then children */}}
+                    {{ if .URL }}
+                      <a
+                        href="{{ .URL }}"
+                        title="{{ .Title }}"
+                        onclick="close_menu()"
+                        {{ with .Params.target }}target="{{ . }}"{{ end }}
+                        class="font-bold"
+                        >{{ with .Params.icon }}
+                          <span
+                            class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                          >
+                            {{- partial "icon.html" . -}}
+                          </span>
+                        {{- end -}}{{- if .Params.showName | default true -}}
+                          <span
+                            class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                            >{{ .Name | markdownify | emojify }}</span
+                          >
+                        {{ end }}</a
+                      >
+                    {{ else }}
+                      {{/* Parent without URL - just show as label */}}
+                      <span class="font-bold">{{ .Name | markdownify | emojify }}</span>
+                    {{ end }}
+                    </li>
+                    {{/* Now show all children */}}
+                    {{ range .Children }}
+                    <li class="group mb-1 ps-4">
+                      <a
+                        href="{{ .URL }}"
+                        title="{{ .Title }}"
+                        onclick="close_menu()"
+                        {{ with .Params.target }}target="{{ . }}"{{ end }}
+                        >{{ with .Params.icon }}
+                          <span
+                            class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                          >
+                            {{- partial "icon.html" . -}}
+                          </span>
+                        {{- end -}}{{- if .Params.showName | default true -}}
+                          <span
+                            class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                            >{{ .Name | markdownify | emojify }}</span
+                          >
+                        {{ end }}</a
+                      >
+                    </li>
+                    {{ end }}
                   {{ else }}
+                    {{/* Regular item without children */}}
                     <a
                       href="{{ .URL }}"
                       title="{{ .Title }}"
