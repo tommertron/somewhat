@@ -15,7 +15,7 @@ showEdit: false
 
 ## Dan Dumsha, class of '03
 
-> The Queen's Drama 20-Year Reunion was an absolute highlight of my year and a powerful testament to the enduring bonds forged during our time in Kingston.
+> The Reunion was an absolute highlight of my year and a powerful testament to the enduring bonds forged during our time in Kingston.
 >
 > This was more than just a trip; it was a deeply meaningful journey back to the foundation of where I grew up, both personally and professionally. Seeing colleagues and friends after two decades immediately reconnected me to the vibrant spirit of Queen's and the unique community the Drama Department fostered.
 >
