@@ -9,6 +9,12 @@ showReadingTime: false
 showEdit: false
 ---
 
+## Tim Fort, Emeritus Professor, Dan School for Drama and Music
+
+> As an Emeritus Professor of the Dan School for Drama and Music (and the Head of Drama during the time covered by this reunion: 2000-2005) I was overwhelmed by the amount of energy and thought put into this event and, most particularly, by the huge response it generated. Honestly, over the course of my 30-plus years as a faculty member at Queen’s, it was rare for our unit to get more than a handful of returning Drama alumni during any of the regularly scheduled homecoming events. This event was different. At the heart of its success was its totally personable and fully alumni-generated nature. The scope and inclusiveness of this non-traditional get together resulted in a weekend of activities that not only awakened a sort of “team spirit” within a full era of Queen’s Drama grads but also resulted in a $5,000 class donation to Queen’s Musical Theatre.
+>
+> In every way, it is clear events like the “Somewhat Reunion” are both a model and a reminder of the powerful lifelong communities that Queen’s can inspire.
+
 ## Sheanna Beau-James, class of '05
 
 > The weekend was a trust fall back in time- landing in the arms of peers with whom I had build bonds born of creativity, artistic explorations, and shared experience in my late teenage and early adult years. I knew I was looking forward to coming to the Somewhat Reunion, but I couldn't have guessed what a sense of unspoken support and encouragement I would feel reconnecting with friends who knew me as I was exploring what it meant to be myself, and in so doing was able to literally re-member parts of myself that I have ignored or neglected in the race to grow up and succeed.
