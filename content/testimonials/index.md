@@ -15,6 +15,12 @@ showEdit: false
 >
 > In every way, it is clear events like the “Somewhat Reunion” are both a model and a reminder of the powerful lifelong communities that Queen’s can inspire.
 
+## Saif Andani Vice President - Alumni Relations & Outreach Coordinator, Queen's Musical Theatre 
+>The Somewhat Reunion initiative has meaningfully transformed how our alumni engage with the Queen’s Musical Theatre community. Over the past few decades, we’ve seen former members return to campus for our alumni galas, fill our audiences with familiar faces cheering on new casts and crews, reconnect with old castmates, and form supportive mentorship ties with current students.
+>
+> This renewed presence has strengthened the intergenerational nature of our club and has reinforced the idea that involvement at Queen’s continues long after graduation. Earlier this year, the Somewhat Reunion initiative raised $5,000 in support of our 2025-26 production season, a contribution made possible through the engagement and sense of belonging fostered by this lovely group. This support has enhanced our ability to produce high-quality, student-led theatre and created more opportunities for our members to grow as artists, collaborators, and leaders.
+
+
 ## Sheanna Beau-James, class of '05
 
 > The weekend was a trust fall back in time- landing in the arms of peers with whom I had build bonds born of creativity, artistic explorations, and shared experience in my late teenage and early adult years. I knew I was looking forward to coming to the Somewhat Reunion, but I couldn't have guessed what a sense of unspoken support and encouragement I would feel reconnecting with friends who knew me as I was exploring what it meant to be myself, and in so doing was able to literally re-member parts of myself that I have ignored or neglected in the race to grow up and succeed.
