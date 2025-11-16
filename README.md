@@ -11,7 +11,7 @@ A Hugo-based website for the Somewhat Reunion event, built with the [Congo theme
 
 1. Clone the repository and navigate to the project directory:
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/tommertron/somewhat
 cd somewhat
 ```
 
